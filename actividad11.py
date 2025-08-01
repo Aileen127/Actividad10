@@ -9,12 +9,11 @@ if quantity > 0:
             while True:
                 code = input("Ingresa el código del producto: ")
                 if code not in products:
-                    products[code] ={"Código:" : code}
                     break
                 else:
                     print("El código ya ha sido registado")
 
-            name = input("Ingresa el nombre del producto: ")
+            name = str(input("Ingresa el nombre del producto: "))
             category = input("Ingresa la categoría del producto (Hombre, Mujer, Niño): ")
             size = input("Ingresa la talla del producto (S, M..): ")
             while True:
@@ -27,7 +26,13 @@ if quantity > 0:
             while True:
                 stock = int(input("Ingresa la cantidad de stock que esta disponible: "))
                 if stock > 0:
-                    products[code]={"Stock disponible:" : stock }
                     break
                 else:
                     print("Dato inválido, intenta de nuevo")
+            products[code]={"Nombre:" : name,
+                            "Categoría:" : category,
+                            "Talla:" : size,
+                            "Precio:" : price,
+                            "Stock:" : stock}
+            break
+print(products)
