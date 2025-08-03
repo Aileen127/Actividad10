@@ -35,4 +35,5 @@ if quantity > 0:
                             "Precio:" : price,
                             "Stock:" : stock}
             break
-print(products)
+for clave, valor in products.items():
+    print(clave, ":", valor)
